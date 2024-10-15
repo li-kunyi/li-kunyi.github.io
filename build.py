@@ -36,7 +36,7 @@ def get_personal_data():
             <div class="col-sm-12" style="">
                 <h5>Homepage Template</h5>
                 <p>
-                    Template adapted from these awesome website:
+                    Template adapted from these awesome websites:
                     <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">&#9883;</a>
                     <a href="https://kashyap7x.github.io/" target="_blank">&#9883;</a>
                     <a href="https://kait0.github.io/" target="_blank">&#9883;</a>
