@@ -20,7 +20,7 @@ def get_personal_data():
                     at <a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>, 
                     where I focused on light field imaging and reconstruction. 
                     Prior to that, I got both a Bachelor of Engineering from the <a href="https://www.coe.pku.edu.cn/" target="_blank">College of Engineering</a> 
-                    and a Bachelor of Science from the <a href="https://eecs.pku.edu.cn/" target="_blank">EECS</a> 
+                    and a Bachelor of Science from the <a href="https://eecs.pku.edu.cn/" target="_blank">School of EECS</a> 
                     at <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a> in 2019.
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
