@@ -34,9 +34,10 @@ def get_personal_data():
     """
     footer = """
             <div class="col-sm-12" style="">
-                <h4>Homepage Template</h4>
+                <h5>Homepage Template</h5>
                 <p>
-                    Feel free to use this website as a template! It is fully responsive and very easy to use and maintain as it uses a python script that crawls your bib files to automatically add the papers and talks. If you find it helpful, please add a link to my website - I will also add a link to yours (if you want). <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">Checkout the github repository for instructions on how to use it</a>. <br>
+                    Template adapted from these awesome website:
+                    <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">&#9883;</a>
                     <a href="https://kashyap7x.github.io/" target="_blank">&#9883;</a>
                     <a href="https://kait0.github.io/" target="_blank">&#9883;</a>
                 </p>
