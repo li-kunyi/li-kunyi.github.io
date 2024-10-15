@@ -3,7 +3,7 @@
 from pybtex.database.input import bibtex
 
 def get_personal_data():
-    name = ["Kunyi Li", "李坤宜"]
+    name = ["Kunyi", "Li"]
     email = "kunyi.li@tum.de"
     twitter = "kunyi_li_"
     github = "li-kunyi"
@@ -16,7 +16,7 @@ def get_personal_data():
                     My research focuses on 3D vision, with a particular emphasis on SLAM, 3D scene reconstruction and understanding. 
                     I am also collaborating with <a href="https://m-niemeyer.github.io/" target="_blank">Michael Niemeyer</a> on related projects. 
                 </p>
-                    I hold a Master's degree in Control Engineering from the <a href="https://www.au.tsinghua.edu.cn/" target="_blank">Department of Automation</a> 
+                    In 2022, I obtained a Master's degree in Control Engineering from the <a href="https://www.au.tsinghua.edu.cn/" target="_blank">Department of Automation</a> 
                     at <a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>, 
                     where I focused on light field imaging and reconstruction. 
                     Prior to that, I got both a Bachelor of Engineering from the <a href="https://www.coe.pku.edu.cn/" target="_blank">College of Engineering</a> 
