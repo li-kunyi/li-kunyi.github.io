@@ -52,7 +52,9 @@ def get_author_dict():
         'Nassir Navab': 'https://www.professoren.tum.de/en/navab-nassir',
         'Siyun Liang': 'https://siyun-liang.github.io/',
         'Sen Wang': 'https://scholar.google.com/citations?user=OxZ9S6oAAAAJ&hl=en',
-        'Stefano Gasperini': 'https://scholar.google.com/citations?user=YuWTPaIAAAAJ&hl=en'
+        'Stefano Gasperini': 'https://scholar.google.com/citations?user=YuWTPaIAAAAJ&hl=en',
+        'Yanyan Li': 'https://yanyan-li.github.io/'
+
         }
 
 def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Kunyi Li', add_links=True):
