@@ -3,7 +3,7 @@
 from pybtex.database.input import bibtex
 
 def get_personal_data():
-    name = ["Kunyi Li", "(李坤宜)"]
+    name = ["Kunyi Li", ""]
     email = "kunyi.li@tum.de"
     twitter = "kunyi_li_"
     github = "li-kunyi"
@@ -12,17 +12,14 @@ def get_personal_data():
                 <p>
                     I'm a Ph.D student at the Chair of <a href="https://www.cs.cit.tum.de/camp/start/" target="_blank">CAMP</a>, 
                     <a href="https://www.tum.de/" target="_blank">Technical University of Munich</a>, 
-                    supervised by <a href="https://federicotombari.github.io/" target="_blank">Federico Tombari</a>. 
+                    supervised by Dr. <a href="https://federicotombari.github.io/" target="_blank">Federico Tombari</a>. 
                     My research focuses on 3D vision, with a particular emphasis on SLAM, 3D scene reconstruction and understanding. 
-                    I am also collaborating with <a href="https://m-niemeyer.github.io/" target="_blank">Michael Niemeyer</a> on related projects. 
-                </p>
-                    In 2022, I obtained a Master's degree in Control Engineering from the <a href="https://www.au.tsinghua.edu.cn/" target="_blank">Department of Automation</a> 
-                    at <a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>, 
+                    I am also collaborating with Dr. <a href="https://m-niemeyer.github.io/" target="_blank">Michael Niemeyer</a> on related projects. 
+                    In 2022, I obtained my Master's degree at <a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>, 
                     where I focused on light field imaging and reconstruction. 
-                    In 2019, I received dual Bachelor's degrees in both Engineering and Science 
-                    from <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a>.
+                    In 2019, I received dual Bachelor's degrees at <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a>.
                 </p>
-                <p>For any inquiries, feel free to reach out to me via mail!</p>
+                <p>For any inquiries, feel free to reach out to me via mail.</p>
                 <p>
                     <a href="mailto:kunyi.li@tum.de" style="margin-right: 5px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
                     <a href="https://x.com/kunyi_li_" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
@@ -54,11 +51,13 @@ def get_author_dict():
         'Stefano Gasperini': 'https://scholar.google.com/citations?user=YuWTPaIAAAAJ&hl=en',
         'Yanyan Li': 'https://yanyan-li.github.io/',
         'Siyun Liang*': 'https://siyun-liang.github.io/',
-        'Sen Wang*': 'https://scholar.google.com/citations?user=OxZ9S6oAAAAJ&hl=en'
-
+        'Sen Wang*': 'https://scholar.google.com/citations?user=OxZ9S6oAAAAJ&hl=en',
+        'Elena Alegret': 'https://scholar.google.com/citations?user=RQzP41AAAAAJ&hl=en',
+        'Elena Alegret*': 'https://scholar.google.com/citations?user=RQzP41AAAAAJ&hl=en',
+        'Atakan Topaloglu': 'https://atakan-topaloglu.github.io/'
         }
 
-def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Kunyi Li', add_links=True):
+def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Kunyi Li', make_bold_name_star='Kunyi Li*', add_links=True):
     links = get_author_dict() if add_links else {}
     s = ""
     for p in persons:
@@ -71,6 +70,8 @@ def generate_person_html(persons, connection=", ", make_bold=True, make_bold_nam
             string_part_i = f'<a href="{links[string_part_i]}" target="_blank">{string_part_i}</a>'
         if make_bold and string_part_i == make_bold_name:
             string_part_i = f'<span style="font-weight: bold";>{make_bold_name}</span>'
+        if make_bold and string_part_i == make_bold_name_star:
+            string_part_i = f'<span style="font-weight: bold";>{make_bold_name_star}</span>'
         if p != persons[-1]:
             string_part_i += connection
         s += string_part_i
@@ -83,6 +84,14 @@ def get_paper_entry(entry_key, entry):
 
     if 'award' in entry.fields.keys():
         s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <span style="color: red;">({entry.fields['award']})</span><br>"""
+    elif '(' in entry.fields['title'] and ')' in entry.fields['title']:
+        import re
+        match = re.match(r'^(.*?)\((.*?)\)(.*)$', entry.fields['title'])
+        if match:
+            before = match.group(1).strip()
+            inside = match.group(2).strip()
+            after = match.group(3).strip()
+            s += f"""<a href="{entry.fields['html']}" target="_blank">{before}</a> <span style="font-weight:bold;">({inside})</span> {after}<br>"""
     else:
         s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <br>"""
 
